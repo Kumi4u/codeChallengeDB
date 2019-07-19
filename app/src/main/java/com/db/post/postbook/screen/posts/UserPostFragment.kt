@@ -24,7 +24,7 @@ class UserPostFragment : BaseFragment() {
     override fun getViewModel(): BaseViewModel {
         viewModel.init()
         viewModel.usePostsMutableLiveData.observe(this, Observer { item ->
-            userPostAdapter.userPostList
+            userPostAdapter.userPostList = item
             userPostAdapter.notifyDataSetChanged()
         })
         return viewModel
@@ -34,7 +34,7 @@ class UserPostFragment : BaseFragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user_post, container, false)
         binding.viewModel = viewModel
 
-          setUpAdapter(binding)
+        setUpAdapter(binding)
         return binding
     }
 

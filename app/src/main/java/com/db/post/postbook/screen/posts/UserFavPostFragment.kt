@@ -48,6 +48,8 @@ class UserFavPostFragment : BaseFragment() {
 
             object : OnPostClickListener {
                 override fun onPostClick(post: UserPost) {
+                    viewModel.onPostFavClicked(post)
+                    viewModel.init()
                 }
 
             })
