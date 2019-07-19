@@ -1,9 +1,9 @@
 package com.db.post.postbook
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.db.post.postbook.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

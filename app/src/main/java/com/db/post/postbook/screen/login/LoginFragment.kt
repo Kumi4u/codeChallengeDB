@@ -4,13 +4,14 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.db.post.postbook.R
-import com.db.post.postbook.base.BaseActivity
-import com.db.post.postbook.databinding.ActivityLoginBinding
+import com.db.post.postbook.base.BaseFragment
+import com.db.post.postbook.databinding.FragmentLoginBinding
 
-class LoginActivity  : BaseActivity() {
+class LoginFragment : BaseFragment() {
 
     lateinit var viewModel: LoginViewModel
-    lateinit var binding: ActivityLoginBinding
+    lateinit var binding: FragmentLoginBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +27,8 @@ class LoginActivity  : BaseActivity() {
 
     private fun bindView() {
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-        binding.setLifecycleOwner(this)
+        binding = DataBindingUtil.setContentView(baseActivity!!, R.layout.fragment_login)
+        binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
     }
