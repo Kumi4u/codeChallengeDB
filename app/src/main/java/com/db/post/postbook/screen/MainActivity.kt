@@ -18,7 +18,8 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         dataBinding.bottomNavigationView.setupWithNavController(findNavController(R.id.nav_fragment))
 
-        findNavController(R.id.nav_fragment).addOnDestinationChangedListener { _, destination, _ ->
+        findNavController(R.id.nav_fragment).addOnDestinationChangedListener { _, destination, args ->
+
 
             dataBinding.bottomNavigationView.visibility =
                 if (destinationIsPost(destination)) View.VISIBLE else View.GONE

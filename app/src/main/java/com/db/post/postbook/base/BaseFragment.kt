@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import org.koin.core.KoinComponent
 
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment : Fragment(), KoinComponent {
 
     abstract fun getViewModel(): BaseViewModel
     abstract fun doDataBinding(inflater: LayoutInflater, container: ViewGroup?): ViewDataBinding
