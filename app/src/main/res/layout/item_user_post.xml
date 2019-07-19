@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
-<data>
-    <variable name="userPost" type="com.db.post.postbook.restServices.UserPost"/>
-</data>
+    <data>
+        <variable name="userPost"
+                  type="com.db.post.postbook.restServices.UserPost"/>
+        <variable name="clickListener"
+                  type="com.db.post.postbook.base.OnUserPostClickListener"/>
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_user_post"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
