@@ -1,0 +1,214 @@
+{
+"userList":[
+{
+"id":"user30685",
+"userName":"User1",
+"userPostList":[
+{
+"isFav":false,
+"postID":"Post79088",
+"postText":"Some Random Text for the comment",
+"postTitle":"Random title",
+"userCommentList":[
+{
+"userCommentId":"comm68241",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User1"
+},
+{
+"userCommentId":"comm56186",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User1"
+}
+]
+},
+{
+"isFav":false,
+"postID":"Post58527",
+"postText":"Some Random Text for the comment",
+"postTitle":"Random title",
+"userCommentList":[
+{
+"userCommentId":"comm62081",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User7"
+},
+{
+"userCommentId":"comm20438",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User5"
+}
+]
+}
+]
+},
+{
+"id":"user41058",
+"userName":"User2",
+"userPostList":[
+{
+"isFav":false,
+"postID":"Post15589",
+"postText":"Some Random Text for the comment",
+"postTitle":"Random title",
+"userCommentList":[
+{
+"userCommentId":"comm71928",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User9"
+},
+{
+"userCommentId":"comm71679",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User1"
+}
+]
+},
+{
+"isFav":false,
+"postID":"Post94691",
+"postText":"Some Random Text for the comment",
+"postTitle":"Random title",
+"userCommentList":[
+{
+"userCommentId":"comm40509",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User8"
+},
+{
+"userCommentId":"comm32931",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User6"
+}
+]
+}
+]
+},
+{
+"id":"user13577",
+"userName":"User3",
+"userPostList":[
+{
+"isFav":true,
+"postID":"Post49229",
+"postText":"Some Random Text for the comment",
+"postTitle":"Random title",
+"userCommentList":[
+{
+"userCommentId":"comm36612",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User9"
+},
+{
+"userCommentId":"comm55638",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User5"
+}
+]
+},
+{
+"isFav":false,
+"postID":"Post30721",
+"postText":"Some Random Text for the comment",
+"postTitle":"Random title",
+"userCommentList":[
+{
+"userCommentId":"comm94895",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User2"
+},
+{
+"userCommentId":"comm46640",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User1"
+}
+]
+}
+]
+},
+{
+"id":"user83158",
+"userName":"User4",
+"userPostList":[
+{
+"isFav":true,
+"postID":"Post86267",
+"postText":"Some Random Text for the comment",
+"postTitle":"Random title",
+"userCommentList":[
+{
+"userCommentId":"comm17371",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User1"
+},
+{
+"userCommentId":"comm12128",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User1"
+}
+]
+},
+{
+"isFav":false,
+"postID":"Post85771",
+"postText":"Some Random Text for the comment",
+"postTitle":"Random title",
+"userCommentList":[
+{
+"userCommentId":"comm22576",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User6"
+},
+{
+"userCommentId":"comm76915",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User4"
+}
+]
+}
+]
+},
+{
+"id":"user27601",
+"userName":"User5",
+"userPostList":[
+{
+"isFav":true,
+"postID":"Post83030",
+"postText":"Some Random Text for the comment",
+"postTitle":"Random title",
+"userCommentList":[
+{
+"userCommentId":"comm77036",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User4"
+},
+{
+"userCommentId":"comm10412",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User7"
+}
+]
+},
+{
+"isFav":false,
+"postID":"Post85292",
+"postText":"Some Random Text for the comment",
+"postTitle":"Random title",
+"userCommentList":[
+{
+"userCommentId":"comm10236",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User2"
+},
+{
+"userCommentId":"comm13378",
+"userCommentText":"Rnadom comment text",
+"userCommentWriter":"User3"
+}
+]
+}
+]
+}
+]
+}
