@@ -9,7 +9,7 @@ import com.db.post.postbook.databinding.ActivityLoginBinding
 
 class LoginActivity  : BaseActivity() {
 
-    lateinit var viewModel: LoginViewModel;
+    lateinit var viewModel: LoginViewModel
     lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +22,6 @@ class LoginActivity  : BaseActivity() {
 
     private fun setupViewModel() {
         viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
-        viewModel.init()
     }
 
     private fun bindView() {

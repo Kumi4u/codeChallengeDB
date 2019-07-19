@@ -3,30 +3,29 @@ package com.db.post.postbook.screen.login
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.db.post.postbook.base.BaseViewModel
+import com.db.post.postbook.restServices.retro.PostBookRestInterface
+import io.reactivex.schedulers.Schedulers
+import org.koin.core.inject
 
-class LoginViewModel  : BaseViewModel() {
+class LoginViewModel : BaseViewModel() {
+
+    val postBookRestInterface: PostBookRestInterface by inject()
+
+    val userIdMutableLiveData = MutableLiveData<String>()
 
 
+    fun onLoginClick() {
 
 
-    lateinit var userIdMutableLiveData: MutableLiveData<String>
+        val disposable = postBookRestInterface.getUserData(userIdMutableLiveData.value ?: "")
+            .subscribeOn(Schedulers.io()).subscribe({
 
-    fun init() {
+                Log.e("Kumi", "user is " + it)
+            }, {
+                Log.e("Kumi", "error is ", it)
+            })
 
-        Log.e("kumi", "application " + PostBookApplication.getPostBookApplication())
-      //  PostBookApplication.getPostBookApplication().userComponent.inject(this)
-        initVariables()
+        addToCompositeDisposable(disposable)
     }
 
-
-    fun onLoginClick(){
-
-        userIdMutableLiveData.postValue("aegagag")
-
-    }
-
-    private fun initVariables() {
-
-        userIdMutableLiveData = MutableLiveData()
-
-    }}
+}
