@@ -7,9 +7,10 @@
         <variable name="userPost"
                   type="com.db.post.postbook.restServices.UserPost"/>
         <variable name="clickListener"
-                  type="com.db.post.postbook.base.OnUserPostClickListener"/>
+                  type="com.db.post.postbook.base.OnPostClickListener"/>
         <variable name="favClickListener"
                   type="com.db.post.postbook.base.OnPostFavClickListener"/>
+
 
     </data>
 
@@ -30,6 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/button2"
+                android:background="@{userPost.fav ? @color/colorPrimary : @color/white}"
                 android:onClickListener="@{()-> favClickListener.onFavClick(userPost)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView"/>

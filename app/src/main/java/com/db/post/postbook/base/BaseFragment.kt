@@ -23,10 +23,11 @@ abstract class BaseFragment : Fragment(), KoinComponent {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val baseViewModel = getViewModel()
+
         val viewDataBinding = doDataBinding(inflater, container)
         viewDataBinding.lifecycleOwner = this@BaseFragment
 
-        val baseViewModel = getViewModel()
 
         baseViewModel.navigateLiveData.observe(this@BaseFragment, Observer {
             baseActivity?.navigationHandler?.onChanged(it.navigationCommand)
