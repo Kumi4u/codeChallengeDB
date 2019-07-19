@@ -3,11 +3,12 @@ package com.db.post.postbook.screen.posts
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.db.post.postbook.base.OnPostFavClickListener
 import com.db.post.postbook.base.OnUserPostClickListener
 import com.db.post.postbook.databinding.ItemUserPostBinding
 import com.db.post.postbook.restServices.UserPost
 
-class UserPostAdapter(val userPostList: List<UserPost>, val onUserPostClickListener: OnUserPostClickListener) :
+class UserPostAdapter(val userPostList: List<UserPost>, val onUserPostClickListener: OnUserPostClickListener, val onPostFavClickListner: OnPostFavClickListener) :
     RecyclerView.Adapter<UserPostAdapter.UserPostViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserPostViewHolder {

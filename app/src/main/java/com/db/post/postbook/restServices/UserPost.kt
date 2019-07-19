@@ -5,6 +5,6 @@ data class UserPost(
     val postID: String,
     val postTitle: String,
     val postText: String,
-    val isFav: Boolean,
+    var isFav: Boolean,
     val userCommentList: List<UserComment>
 )

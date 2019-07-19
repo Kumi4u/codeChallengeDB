@@ -9,10 +9,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 class PostBookRestService {
 
 
-    val baseUrl = "https://my-json-server.typicode.com/KumarSaurabhJha/postBookDB/"
+    val baseUrl = "https://my-json-server.typicode.com/Kumi4u/codeChallengeDB/"
 
 
-    public fun createRestService(): PostBookRestInterface {
+     fun createRestService(): PostBookRestInterface {
         return Retrofit.Builder()
             .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
