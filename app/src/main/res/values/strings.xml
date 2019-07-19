@@ -3,5 +3,6 @@
     <string name="userid">UserId</string>
     <string name="login">Login</string>
     <string name="fav">FAV</string>
+    <string name="all">All</string>
 
 </resources>

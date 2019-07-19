@@ -7,6 +7,8 @@ import org.koin.core.KoinComponent
 
 open class BaseViewModel : ViewModel(), KoinComponent {
     val compositeDisposable = CompositeDisposable()
+    val navigateLiveData : SingleLiveEvent<Navigation> = SingleLiveEvent()
+
 
     protected fun addToCompositeDisposable(disposable: Disposable){
         compositeDisposable.add(disposable)
@@ -15,6 +17,10 @@ open class BaseViewModel : ViewModel(), KoinComponent {
     override fun onCleared() {
         super.onCleared()
         compositeDisposable.clear()
+    }
+
+    protected fun navigate(){
+
     }
 
 }
