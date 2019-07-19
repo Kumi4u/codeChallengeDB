@@ -1,7 +1,6 @@
-package com.db.post.postbook.screen.login
+package com.db.post.postbook.navigation
 
-import com.db.post.postbook.navigation.Navigation
-import com.db.post.postbook.navigation.NavigationCommand
+import com.db.post.postbook.screen.login.LoginFragmentDirections
 
 sealed class LoginNavigation(override val navigationCommand: NavigationCommand) :
     Navigation {

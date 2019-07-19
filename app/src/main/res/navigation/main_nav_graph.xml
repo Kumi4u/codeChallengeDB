@@ -18,21 +18,22 @@
     <fragment android:id="@+id/userFavPostFragment"
               android:name="com.db.post.postbook.screen.posts.UserFavPostFragment"
               android:label="UserFavPostFragment">
-        <action android:id="@+id/action_userFavPostFragment_to_postCommentsFragment"
-                app:destination="@id/postCommentsFragment"/>
     </fragment>
 
     <fragment android:id="@+id/userPostFragment"
               android:name="com.db.post.postbook.screen.posts.UserPostFragment"
               android:label="UserPostFragment">
 
-        <action android:id="@+id/action_userPostFragment_to_postCommentsFragment"
-                app:destination="@id/postCommentsFragment"
-
-        />
     </fragment>
 
     <fragment android:id="@+id/postCommentsFragment"
               android:name="com.db.post.postbook.screen.comments.PostCommentsFragment"
               android:label="PostCommentsFragment"/>
+    <action android:id="@+id/global_to_postCommentsFragment"
+            app:destination="@id/postCommentsFragment"
+
+    />
+
+
+
 </navigation>
