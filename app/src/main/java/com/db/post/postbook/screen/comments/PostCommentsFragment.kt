@@ -1,36 +1,30 @@
 package com.db.post.postbook.screen.comments
 
-import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
+import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.viewModels
 import com.db.post.postbook.R
 import com.db.post.postbook.base.BaseFragment
+import com.db.post.postbook.base.BaseViewModel
 import com.db.post.postbook.databinding.FragmentPostCommentsBinding
 
 class PostCommentsFragment : BaseFragment() {
 
-    lateinit var viewModel: PostCommentsViewModel
+
+    val viewModel: PostCommentsViewModel by viewModels()
     lateinit var binding: FragmentPostCommentsBinding
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        setupViewModel()
-        bindView()
-
+    override fun getViewModel(): BaseViewModel {
+        return viewModel
     }
 
-    private fun setupViewModel() {
-        viewModel = ViewModelProviders.of(this).get(PostCommentsViewModel::class.java)
-    }
+    override fun doDataBinding(inflater: LayoutInflater, container: ViewGroup?): ViewDataBinding {
 
-    private fun bindView() {
-
-        binding = DataBindingUtil.setContentView(baseActivity!!, R.layout.fragment_post_comments)
-        binding.lifecycleOwner = this
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_post_comments,container,false)
         binding.viewModel = viewModel
-
+        return binding
     }
-
 }
+

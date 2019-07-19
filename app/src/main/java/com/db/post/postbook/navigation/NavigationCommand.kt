@@ -1,4 +1,4 @@
-package com.db.post.postbook.base
+package com.db.post.postbook.navigation
 
 import androidx.navigation.NavDirections
 

@@ -18,12 +18,14 @@ class LoginViewModel : BaseViewModel() {
 
 
         val disposable = postBookRestInterface.getUserData(userIdMutableLiveData.value ?: "")
-            .subscribeOn(Schedulers.io()).subscribe({
+            .subscribeOn(Schedulers.io()).subscribe({ user ->
+                navigate(LoginNavigation.ToPosts(user))
 
-                Log.e("Kumi", "user is " + it)
-            }, {
-                Log.e("Kumi", "error is ", it)
+            }, { throwable ->
+                Log.e("Kumi", "error is ", throwable)
             })
+
+
 
         addToCompositeDisposable(disposable)
 

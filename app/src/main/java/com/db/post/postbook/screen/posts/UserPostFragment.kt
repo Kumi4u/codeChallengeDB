@@ -1,36 +1,29 @@
 package com.db.post.postbook.screen.posts
 
-import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
+import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.viewModels
 import com.db.post.postbook.R
 import com.db.post.postbook.base.BaseFragment
+import com.db.post.postbook.base.BaseViewModel
 import com.db.post.postbook.databinding.FragmentUserPostBinding
 
 class UserPostFragment : BaseFragment() {
 
-    lateinit var viewModel: UserPostViewModel
+    val viewModel: UserPostViewModel by viewModels()
     lateinit var binding: FragmentUserPostBinding
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        setupViewModel()
-        bindView()
-
+    override fun getViewModel(): BaseViewModel {
+        return viewModel
     }
 
-    private fun setupViewModel() {
-        viewModel = ViewModelProviders.of(this).get(UserPostViewModel::class.java)
-    }
-
-    private fun bindView() {
-
-        binding = DataBindingUtil.setContentView(baseActivity!!, R.layout.fragment_user_post)
-        binding.lifecycleOwner = this
+    override fun doDataBinding(inflater: LayoutInflater, container: ViewGroup?): ViewDataBinding {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user_post, container, false)
         binding.viewModel = viewModel
 
+        return binding
     }
 
 }
