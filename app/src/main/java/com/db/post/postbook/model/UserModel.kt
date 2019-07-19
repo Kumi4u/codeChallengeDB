@@ -33,5 +33,19 @@ class UserModel() {
         }
     }
 
+    fun getFavPosts(): List<UserPost>{
+       val favPostList = ArrayList<UserPost>()
+
+        val iterate = user.userPostList.listIterator()
+
+        while (iterate.hasNext()){
+            val post= iterate.next()
+            if (post.isFav){
+                favPostList.add(post)
+            }
+        }
+        return favPostList
+    }
+
 
 }

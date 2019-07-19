@@ -23,7 +23,7 @@ class UserPostFragment : BaseFragment() {
 
     override fun getViewModel(): BaseViewModel {
         viewModel.init()
-        viewModel.usePosterMutableLiveData.observe(this, Observer { item ->
+        viewModel.usePostsMutableLiveData.observe(this, Observer { item ->
             userPostAdapter.userPostList
             userPostAdapter.notifyDataSetChanged()
         })
@@ -45,7 +45,7 @@ class UserPostFragment : BaseFragment() {
 
         userPostAdapter = UserPostAdapter(
 
-            viewModel.usePosterMutableLiveData.value!!,
+            viewModel.usePostsMutableLiveData.value!!,
 
             object : OnPostClickListener {
                 override fun onPostClick(post: UserPost) {

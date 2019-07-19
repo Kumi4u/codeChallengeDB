@@ -1,6 +1,5 @@
 package com.db.post.postbook.screen.posts
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.db.post.postbook.base.BaseViewModel
 import com.db.post.postbook.model.UserModel
@@ -12,15 +11,12 @@ class UserPostViewModel : BaseViewModel() {
 
     val userModel: UserModel by inject()
 
-    val usePosterMutableLiveData = MutableLiveData<List<UserPost>>()
+    val usePostsMutableLiveData = MutableLiveData<List<UserPost>>()
 
 
 
     fun init(){
-
-        usePosterMutableLiveData.value= userModel.getCurrentUser().userPostList
-        Log.e("kumi","value posted  "+ userModel.getCurrentUser().userPostList)
-
+        usePostsMutableLiveData.value= userModel.getCurrentUser().userPostList
     }
 
 
@@ -33,12 +29,6 @@ class UserPostViewModel : BaseViewModel() {
 
         userModel.updatePostLikeness(post)
         init()
-
-
-        Log.e("kumi","is fav "+ userModel.getCurrentUser().userPostList)
-
-
-
     }
 
 
