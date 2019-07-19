@@ -1,5 +1,6 @@
 package com.db.post.postbook.screen.posts
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.db.post.postbook.base.BaseViewModel
 import com.db.post.postbook.model.UserModel
@@ -22,6 +23,8 @@ class UserPostViewModel : BaseViewModel() {
 
     fun onUserPostClick(post: UserPost) {
 
+        Log.e("kumi","post is " + userModel)
+        userModel.setCurrentPost(post)
         navigate(HomeNavigation.ToPostInformation)
     }
 

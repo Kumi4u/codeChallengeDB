@@ -7,7 +7,7 @@ class UserModel() {
 
 
     lateinit var user: User
-
+    lateinit var userPost: UserPost
 
     fun setCurrentUser(user: User) {
         this.user = user
@@ -15,6 +15,14 @@ class UserModel() {
 
     fun getCurrentUser(): User {
         return this.user
+    }
+
+    fun setCurrentPost(post: UserPost) {
+        this.userPost = post
+    }
+
+    fun getCurrentUserPost(): UserPost {
+        return this.userPost
     }
 
     fun updatePostLikeness(userPost: UserPost) {
@@ -25,7 +33,7 @@ class UserModel() {
             val iterate = user.userPostList.listIterator()
             while (iterate.hasNext()) {
                 val post = iterate.next()
-                if (post.postID.equals(userPost.postID)){
+                if (post.postID.equals(userPost.postID)) {
                     post.isFav = !userPost.isFav
                 }
             }
@@ -33,14 +41,14 @@ class UserModel() {
         }
     }
 
-    fun getFavPosts(): List<UserPost>{
-       val favPostList = ArrayList<UserPost>()
+    fun getFavPosts(): List<UserPost> {
+        val favPostList = ArrayList<UserPost>()
 
         val iterate = user.userPostList.listIterator()
 
-        while (iterate.hasNext()){
-            val post= iterate.next()
-            if (post.isFav){
+        while (iterate.hasNext()) {
+            val post = iterate.next()
+            if (post.isFav) {
                 favPostList.add(post)
             }
         }

@@ -21,7 +21,7 @@ class UserFavPostViewModel : BaseViewModel(){
 
 
     fun onUserPostClick(post: UserPost) {
-
+        userModel.setCurrentPost(post)
         navigate(HomeNavigation.ToPostInformation)
     }
 
