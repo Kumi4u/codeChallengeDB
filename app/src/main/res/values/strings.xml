@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PostBook</string>
+    <string name="userid">UserId</string>
+    <string name="login">Login</string>
 </resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel"
+                  type="com.db.post.postbook.screen.login.LoginViewModel"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".screen.login.LoginActivity">
+
+        <TextView
+                android:text="@string/userid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/UserId"
+                android:layout_marginStart="76dp"
+                android:layout_marginBottom="8dp"
+                android:textSize="18sp"
+                android:textColor="@color/textViewColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:text="@={viewModel.userIdMutableLiveData}"
+                android:id="@+id/editText"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="32dp"
+                app:layout_constraintStart_toEndOf="@+id/UserId"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/UserId"
+                app:layout_constraintBottom_toBottomOf="@+id/UserId"/>
+
+        <Button
+                android:text="@string/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button"
+                android:onClick="@{()->viewModel.onLoginClick()}"
+                android:layout_marginTop="64dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
