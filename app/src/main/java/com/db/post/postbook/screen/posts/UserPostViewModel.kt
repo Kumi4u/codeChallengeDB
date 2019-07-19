@@ -19,6 +19,8 @@ class UserPostViewModel : BaseViewModel() {
     fun init(){
 
         usePosterMutableLiveData.value= userModel.getCurrentUser().userPostList
+        Log.e("kumi","value posted  "+ userModel.getCurrentUser().userPostList)
+
     }
 
 

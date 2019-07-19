@@ -1,6 +1,5 @@
 package com.db.post.postbook.screen.posts
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -12,7 +11,6 @@ import com.db.post.postbook.R
 import com.db.post.postbook.base.BaseFragment
 import com.db.post.postbook.base.BaseViewModel
 import com.db.post.postbook.base.OnPostClickListener
-import com.db.post.postbook.base.OnPostFavClickListener
 import com.db.post.postbook.databinding.FragmentUserPostBinding
 import com.db.post.postbook.restServices.UserPost
 
@@ -27,6 +25,7 @@ class UserPostFragment : BaseFragment() {
         viewModel.init()
         viewModel.usePosterMutableLiveData.observe(this, Observer { item ->
             userPostAdapter.userPostList
+            userPostAdapter.notifyDataSetChanged()
         })
         return viewModel
     }
@@ -43,7 +42,6 @@ class UserPostFragment : BaseFragment() {
 
         val recyclerView = binding.allPostRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(baseActivity)
-        Log.e("kumi", "list is "+ viewModel.usePosterMutableLiveData.value)
 
         userPostAdapter = UserPostAdapter(
 
@@ -51,17 +49,10 @@ class UserPostFragment : BaseFragment() {
 
             object : OnPostClickListener {
                 override fun onPostClick(post: UserPost) {
-                    viewModel.onUserPostClick(post)
-                }
-
-            },
-            object : OnPostFavClickListener {
-                override fun onFavClick(post: UserPost) {
                     viewModel.onPostFavClicked(post)
                 }
 
-            }
-        )
+            })
         recyclerView.adapter = userPostAdapter
     }
 
