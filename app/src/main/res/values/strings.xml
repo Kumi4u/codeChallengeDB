@@ -4,5 +4,6 @@
     <string name="login">Login</string>
     <string name="fav">FAV</string>
     <string name="all">All</string>
+    <string name="no_fav_challenges">No Fav challenges</string>
 
 </resources>
