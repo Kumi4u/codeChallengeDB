@@ -23,6 +23,7 @@ class PostCommentAdapter(var userCommentList: List<UserComment>) :
     override fun onBindViewHolder(holder: UserPostViewHolder, position: Int) {
 
         val userComment = userCommentList.get(position)
+        holder.binding.userComment = userComment
 
     }
 
