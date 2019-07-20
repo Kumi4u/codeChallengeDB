@@ -10,9 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.db.post.postbook.R
 import com.db.post.postbook.base.BaseFragment
 import com.db.post.postbook.base.BaseViewModel
-import com.db.post.postbook.base.OnPostClickListener
 import com.db.post.postbook.databinding.FragmentUserFavPostBinding
-import com.db.post.postbook.restServices.UserPost
 
 
 class UserFavPostFragment : BaseFragment() {
@@ -37,25 +35,17 @@ class UserFavPostFragment : BaseFragment() {
         setUpAdapter(binding)
         return binding
     }
+
     private fun setUpAdapter(binding: FragmentUserFavPostBinding) {
 
         val recyclerView = binding.favPostRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(baseActivity)
 
         userPostAdapter = UserPostAdapter(
-
-            viewModel.usePostsMutableLiveData.value!!,
-
-            object : OnPostClickListener {
-                override fun onPostClick(post: UserPost) {
-                    viewModel.onPostFavClicked(post)
-                    viewModel.init()
-                }
-
-            })
+            viewModel.usePostsMutableLiveData.value!!, viewModel
+        )
         recyclerView.adapter = userPostAdapter
     }
-
 
 
 }
