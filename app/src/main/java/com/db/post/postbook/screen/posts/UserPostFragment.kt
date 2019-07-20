@@ -10,9 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.db.post.postbook.R
 import com.db.post.postbook.base.BaseFragment
 import com.db.post.postbook.base.BaseViewModel
-import com.db.post.postbook.base.OnPostClickListener
 import com.db.post.postbook.databinding.FragmentUserPostBinding
-import com.db.post.postbook.restServices.UserPost
 
 class UserPostFragment : BaseFragment() {
 
@@ -44,15 +42,8 @@ class UserPostFragment : BaseFragment() {
         recyclerView.layoutManager = LinearLayoutManager(baseActivity)
 
         userPostAdapter = UserPostAdapter(
-
-            viewModel.usePostsMutableLiveData.value!!,
-
-            object : OnPostClickListener {
-                override fun onPostClick(post: UserPost) {
-                    viewModel.onUserPostClick(post)
-                }
-
-            })
+            viewModel.usePostsMutableLiveData.value!!, viewModel
+        )
         recyclerView.adapter = userPostAdapter
     }
 

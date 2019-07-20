@@ -21,8 +21,11 @@
                 android:text="@{userPost.postTitle}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/textView"
+                android:onClickListener="@{()->clickListener.onPostClick(userPost)}"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="8dp"/>
         <Button
                 android:text="@string/fav"
@@ -30,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/button2"
                 android:background="@{userPost.fav ? @color/colorPrimary : @color/white}"
-                android:onClickListener="@{()->clickListener.onPostClick(userPost)}"
+                android:onClickListener="@{()->clickListener.onFavClick(userPost)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView"/>
         <TextView
