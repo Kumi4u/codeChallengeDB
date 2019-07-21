@@ -11,11 +11,11 @@ import org.koin.core.inject
 
 class LoginViewModel : BaseViewModel() {
 
-    val postBookRestInterface: PostBookRestInterface by inject()
+  private  val postBookRestInterface: PostBookRestInterface by inject()
 
     val userIdMutableLiveData = MutableLiveData<String>()
 
-    val userModel :UserModel by inject()
+  private  val userModel :UserModel by inject()
 
 
     fun onLoginClick() {

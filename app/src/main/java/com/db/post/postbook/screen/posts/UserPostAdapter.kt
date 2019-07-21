@@ -23,7 +23,7 @@ class UserPostAdapter(var userPostList: List<UserPost>, val onPostClickListener:
 
     override fun onBindViewHolder(holder: UserPostViewHolder, position: Int) {
 
-        val userPost = userPostList.get(position)
+        val userPost = userPostList[position]
         holder.bind(userPost, onPostClickListener)
 
     }

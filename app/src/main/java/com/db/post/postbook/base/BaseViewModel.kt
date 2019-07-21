@@ -8,7 +8,7 @@ import io.reactivex.disposables.Disposable
 import org.koin.core.KoinComponent
 
 open class BaseViewModel : ViewModel(), KoinComponent {
-    val compositeDisposable = CompositeDisposable()
+     protected val compositeDisposable = CompositeDisposable()
     val navigateLiveData : SingleLiveEvent<Navigation> =
         SingleLiveEvent()
 

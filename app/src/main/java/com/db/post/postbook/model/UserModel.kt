@@ -3,7 +3,7 @@ package com.db.post.postbook.model
 import com.db.post.postbook.restServices.User
 import com.db.post.postbook.restServices.UserPost
 
-class UserModel() {
+class UserModel {
 
 
     lateinit var user: User
@@ -33,7 +33,7 @@ class UserModel() {
             val iterate = user.userPostList.listIterator()
             while (iterate.hasNext()) {
                 val post = iterate.next()
-                if (post.postID.equals(userPost.postID)) {
+                if (post.postID == userPost.postID) {
                     post.isFav = !userPost.isFav
                 }
             }

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.db.post.postbook.databinding.ItemCommentsBinding
 import com.db.post.postbook.restServices.UserComment
 
-class PostCommentAdapter(var userCommentList: List<UserComment>) :
+class PostCommentAdapter(private var userCommentList: List<UserComment>) :
     RecyclerView.Adapter<PostCommentAdapter.UserPostViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserPostViewHolder {
@@ -22,7 +22,7 @@ class PostCommentAdapter(var userCommentList: List<UserComment>) :
 
     override fun onBindViewHolder(holder: UserPostViewHolder, position: Int) {
 
-        val userComment = userCommentList.get(position)
+        val userComment = userCommentList[position]
         holder.binding.userComment = userComment
 
     }

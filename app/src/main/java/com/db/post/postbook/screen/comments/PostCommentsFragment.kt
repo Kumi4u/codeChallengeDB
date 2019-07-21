@@ -16,7 +16,7 @@ class PostCommentsFragment : BaseFragment() {
 
     val viewModel: PostCommentsViewModel by viewModels()
     lateinit var binding: FragmentPostCommentsBinding
-    lateinit var postCommentAdapter: PostCommentAdapter
+    private lateinit var postCommentAdapter: PostCommentAdapter
 
     override fun getViewModel(): BaseViewModel {
         viewModel.init()
@@ -25,7 +25,7 @@ class PostCommentsFragment : BaseFragment() {
 
     override fun doDataBinding(inflater: LayoutInflater, container: ViewGroup?): ViewDataBinding {
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_post_comments,container,false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_post_comments, container, false)
         binding.viewModel = viewModel
         setAdapter(binding)
         return binding

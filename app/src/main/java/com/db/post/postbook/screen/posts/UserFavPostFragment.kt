@@ -16,7 +16,7 @@ import com.db.post.postbook.databinding.FragmentUserFavPostBinding
 class UserFavPostFragment : BaseFragment() {
     val viewModel: UserFavPostViewModel by viewModels()
     lateinit var binding: FragmentUserFavPostBinding
-    lateinit var userPostAdapter: UserPostAdapter
+    lateinit var  userPostAdapter: UserPostAdapter
 
 
     override fun getViewModel(): BaseViewModel {
